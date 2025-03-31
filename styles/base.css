@@ -1,0 +1,122 @@
+@layer base {
+  :root {
+    /* Generate CSS variables from theme config */
+    --background-base: 0 0% 100%;
+    --background-foreground: 240 10% 3.9%;
+    --foreground-base: 240 10% 3.9%;
+    --foreground-muted: 240 3.8% 46.1%;
+    --primary-base: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --primary-muted: 240 4.8% 95.9%;
+    --secondary-base: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --accent-base: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --muted-base: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --destructive-base: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Radii */
+    --radius-sm: 0.3rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.7rem;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+
+    /* Transitions */
+    --transition-duration-sm: 150ms;
+    --transition-duration-md: 200ms;
+    --transition-duration-lg: 300ms;
+    --transition-timing-default: cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-timing-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-timing-elastic: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .dark {
+    --background-base: 240 10% 3.9%;
+    --background-foreground: 0 0% 98%;
+    --foreground-base: 0 0% 98%;
+    --foreground-muted: 240 5% 64.9%;
+    --primary-base: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --primary-muted: 240 3.7% 15.9%;
+    --secondary-base: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --accent-base: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --muted-base: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --destructive-base: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.15);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.2);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.2);
+  }
+
+  /* High Contrast Mode */
+  @media (forced-colors: active) {
+    :root {
+      --background-base: Canvas;
+      --background-foreground: CanvasText;
+      --foreground-base: CanvasText;
+      --foreground-muted: GrayText;
+      --primary-base: Highlight;
+      --primary-foreground: HighlightText;
+      --secondary-base: Canvas;
+      --secondary-foreground: CanvasText;
+      --accent-base: AccentColor;
+      --accent-foreground: HighlightText;
+      --muted-base: GrayText;
+      --muted-foreground: CanvasText;
+      --destructive-base: LinkText;
+      --destructive-foreground: Canvas;
+    }
+  }
+
+  /* Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    :root {
+      --transition-duration-sm: 0.01ms;
+      --transition-duration-md: 0.01ms;
+      --transition-duration-lg: 0.01ms;
+    }
+  }
+
+  /* Base styles */
+  body {
+    background-color: hsl(var(--background-base));
+    color: hsl(var(--foreground-base));
+    font-feature-settings: "rlig" 1, "calt" 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Focus styles */
+  *:focus-visible {
+    outline: 2px solid hsl(var(--primary-base));
+    outline-offset: 2px;
+  }
+
+  /* Touch device optimizations */
+  @media (hover: none) {
+    :root {
+      --radius-sm: 0.4rem;
+      --radius-md: 0.6rem;
+      --radius-lg: 0.8rem;
+    }
+
+    button, 
+    [role="button"],
+    a {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+} 

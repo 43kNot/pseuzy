@@ -1,0 +1,255 @@
+@layer utilities {
+  /* Text utilities */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Loading states */
+  .loading {
+    @apply animate-pulse cursor-wait opacity-60;
+  }
+
+  .loading-skeleton {
+    @apply relative overflow-hidden bg-muted/10 before:absolute before:inset-0 before:-translate-x-full before:animate-shimmer before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent;
+  }
+
+  /* Container queries */
+  @container (min-width: theme('screens.sm')) {
+    .container-sm\:text-lg {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+    }
+  }
+
+  @container (min-width: theme('screens.md')) {
+    .container-md\:text-xl {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+    }
+  }
+
+  @container (min-width: theme('screens.lg')) {
+    .container-lg\:text-2xl {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+  }
+
+  /* Accessibility */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  /* Enhanced focus styles */
+  .focus-ring {
+    @apply outline-none transition-shadow duration-200;
+  }
+  .focus-ring:focus-visible {
+    @apply ring-2 ring-primary ring-offset-2 ring-offset-background;
+  }
+
+  /* Touch interactions */
+  @media (hover: none) {
+    .touch-tap {
+      @apply transition-transform duration-200;
+    }
+    .touch-tap:active {
+      @apply scale-95;
+    }
+  }
+
+  /* Scrollbar styles */
+  .scrollbar-hide {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    @apply w-1.5 h-1.5;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-muted/20;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-muted;
+  }
+
+  /* Grid layouts */
+  .grid-auto-fit {
+    @apply grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--min-column-width, 200px), 1fr));
+    gap: var(--grid-gap, 1rem);
+  }
+
+  .grid-auto-fill {
+    @apply grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--min-column-width, 200px), 1fr));
+    gap: var(--grid-gap, 1rem);
+  }
+
+  /* Flex layouts */
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  .flex-between {
+    @apply flex items-center justify-between;
+  }
+
+  /* Aspect ratios */
+  .aspect-video {
+    aspect-ratio: 16 / 9;
+  }
+
+  .aspect-square {
+    aspect-ratio: 1 / 1;
+  }
+
+  .aspect-portrait {
+@layer utilities {
+  /* Text utilities */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Loading states */
+  .loading {
+    @apply animate-pulse cursor-wait opacity-60;
+  }
+
+  .loading-skeleton {
+    @apply relative overflow-hidden bg-muted/10 before:absolute before:inset-0 before:-translate-x-full before:animate-shimmer before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent;
+  }
+
+  /* Container queries */
+  @container (min-width: theme('screens.sm')) {
+    .container-sm\:text-lg {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+    }
+  }
+
+  @container (min-width: theme('screens.md')) {
+    .container-md\:text-xl {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+    }
+  }
+
+  @container (min-width: theme('screens.lg')) {
+    .container-lg\:text-2xl {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+  }
+
+  /* Accessibility */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  /* Enhanced focus styles */
+  .focus-ring {
+    @apply outline-none transition-shadow duration-200;
+  }
+  .focus-ring:focus-visible {
+    @apply ring-2 ring-primary ring-offset-2 ring-offset-background;
+  }
+
+  /* Touch interactions */
+  @media (hover: none) {
+    .touch-tap {
+      @apply transition-transform duration-200;
+    }
+    .touch-tap:active {
+      @apply scale-95;
+    }
+  }
+
+  /* Scrollbar styles */
+  .scrollbar-hide {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    @apply w-1.5 h-1.5;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-muted/20;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-muted;
+  }
+
+  /* Grid layouts */
+  .grid-auto-fit {
+    @apply grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--min-column-width, 200px), 1fr));
+    gap: var(--grid-gap, 1rem);
+  }
+
+  .grid-auto-fill {
+    @apply grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--min-column-width, 200px), 1fr));
+    gap: var(--grid-gap, 1rem);
+  }
+
+  /* Flex layouts */
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  .flex-between {
+    @apply flex items-center justify-between;
+  }
+
+  /* Aspect ratios */
+  .aspect-video {
+    aspect-ratio: 16 / 9;
+  }
+
+  .aspect-square {
+    aspect-ratio: 1 / 1;
+  }
+
+  .aspect-portrait {
+    aspect-ratio: 3 / 4;
+  }
+} 
